@@ -6,9 +6,11 @@
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "test": "vue-cli-service test",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prod-serve": "npm run build && node_modules/.bin/http-server -p 80 dist"
   },
   "dependencies": {
+    "http-server": "^0.11.1",
     "vue": "^2.5.13",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^6.0.0"
