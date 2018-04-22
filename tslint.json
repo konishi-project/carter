@@ -1,8 +1,9 @@
 {
   "defaultSeverity": "warning",
   "extends": [
+    "tslint-config-prettier",
     "tslint:recommended",
-    "tslint-config-prettier"
+    "tslint-no-unused-expression-chai"
   ],
   "rules": {
     "prettier": [
@@ -12,12 +13,16 @@
         "trailingComma": "all"
       }
     ],
+    "arrow-parens": false,
+    "quotemark": false,
     "interface-name": false,
     "ordered-imports": false,
     "object-literal-sort-keys": false,
-    "no-consecutive-blank-lines": false
+    "no-consecutive-blank-lines": false,
+    "semicolon": [true, "always"]
   },
   "rulesDirectory": [
-    "tslint-plugin-prettier"
+    "tslint-plugin-prettier",
+    "tslint-no-unused-expression-chai"
   ]
 }
