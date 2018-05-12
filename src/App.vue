@@ -1,20 +1,24 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <Post :post="post" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import Post from './components/Post.vue';
+import state from './random-state';
 
 @Component({
   components: {
-    HelloWorld,
+    Post,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  get post() {
+    return state.posts[0];
+  }
+}
 </script>
 
 <style>

@@ -1,5 +1,6 @@
 import Faker from 'faker';
 import { range } from 'lodash';
+import { IUser, INote } from '@/app-state';
 
 const DUMMY_PICTURE_COUNT = 3;
 const DUMMY_AVATAR_COUNT = 3;
@@ -15,17 +16,17 @@ function getRandomInt(min: number, max: number) {
 }
 
 function getRandomImageUrl() {
-  return `./assets/dummy-data/pictures/${getRandomInt(
+  return require(`./assets/dummy-data/pictures/${getRandomInt(
     1,
     DUMMY_PICTURE_COUNT + 1,
-  )}`;
+  )}.png`);
 }
 
 function getRandomAvatarUrl() {
-  return `./assets/dummy-data/pictures/${getRandomInt(
+  return require(`./assets/dummy-data/avatars/${getRandomInt(
     1,
     DUMMY_AVATAR_COUNT + 1,
-  )}`;
+  )}.png`);
 }
 
 function getRandomItem<T>(items: T[]) {
@@ -44,25 +45,15 @@ export function getRandomUser() {
   };
 }
 
-interface IUser {
-  firstName: string;
-  lastName: string;
-  readonly fullName: string;
-  username: string;
-  avatarUrl: string;
-}
-
-interface INote {
-  imageUrl: string | null;
-  text: string;
-  author: IUser;
-  children: null | INote[];
-}
-
 export function getRandomNote(userPool: IUser[], nestingLevel = 0): INote {
+  const now = new Date();
+  const fiveDaysAgo = new Date();
+  fiveDaysAgo.setDate(fiveDaysAgo.getDate() - 5);
+
   return {
-    imageUrl: Math.random() < 0.3 ? getRandomImageUrl() : null,
-    text: Faker.lorem.sentences(getRandomInt(1, 4)),
+    imageUrl: Math.random() < 0.5 ? getRandomImageUrl() : null,
+    text: Faker.lorem.sentences(getRandomInt(1, 5)),
+    time: Faker.date.between(now, fiveDaysAgo),
     author: getRandomUser(),
     children:
       nestingLevel === 0
