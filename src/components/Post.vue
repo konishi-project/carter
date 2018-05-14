@@ -1,18 +1,29 @@
 <template>
-  <div class="post">
+    <article class="box">
 
-    <div class="post-author">
-      <img :src="post.author.avatarUrl"/>
-      <p>{{ post.author.fullName }}</p>
-    </div>
+      <div class="mb3">
+        <figure class="image is-64x64 mb2">
+          <img :src="post.author.avatarUrl"/>
+        </figure>
+        <p class="has-text-weight-bold">{{ post.author.fullName }}</p>
+      </div>
 
-    <img v-if="post.imageUrl" :src="post.imageUrl"/>
+      <p class="has-text-left">{{ post.text }}</p>
 
-    <p>{{ prettyTime }}</p>
+      <div class="mv3">
+        <figure class="image center">
+          <img v-if="post.imageUrl" :src="post.imageUrl"/>
+        </figure>
+      </div>
 
-    <p>{{ post.text }}</p>
+      <div class="level">
+        <div class="level-left"></div>
+        <div class="level-right">
+          <p class="level-item has-text-grey-light">{{ prettyTime }}</p>
+        </div>
+      </div>
 
-  </div>
+    </article>
 </template>
 
 <script lang="ts">
@@ -35,4 +46,3 @@ export default class Post extends Vue {
   }
 }
 </script>
-

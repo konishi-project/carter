@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <Post :post="post" />
+    <div id="feed" class="section">
+      <div class="container is-block-desktop" style="max-width: 600px;">
+        <Post :post="post"/>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -21,13 +25,20 @@ export default class App extends Vue {
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import "~bulma/sass/utilities/_all";
+
+
+// #app {
+//   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   align-content: center;
+//   text-align: center;
+//   color: #2c3e50;
+//   margin-top: 60px;
+// }
+
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
 </style>

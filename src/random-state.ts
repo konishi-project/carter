@@ -52,7 +52,7 @@ export function getRandomNote(userPool: IUser[], nestingLevel = 0): INote {
 
   return {
     imageUrl: Math.random() < 0.5 ? getRandomImageUrl() : null,
-    text: Faker.lorem.sentences(getRandomInt(1, 5)),
+    text: Faker.lorem.sentences(getRandomInt(1, 10)),
     time: Faker.date.between(now, fiveDaysAgo),
     author: getRandomUser(),
     children:
