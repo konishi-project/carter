@@ -1,11 +1,11 @@
 <template>
     <article class="box">
 
-      <div class="mb3">
-        <figure class="image is-64x64 mb2">
+      <div class="flex mb3">
+        <figure class="image is-64x64">
           <img :src="post.author.avatarUrl"/>
         </figure>
-        <p class="has-text-weight-bold">{{ post.author.fullName }}</p>
+        <p class="has-text-weight-bold is-size-5 mh2 mv1">{{ post.author.fullName }}</p>
       </div>
 
       <p class="has-text-left">{{ post.text }}</p>
