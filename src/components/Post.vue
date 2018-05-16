@@ -2,18 +2,18 @@
     <article class="box">
 
       <div class="flex mb3">
-        <figure class="image is-64x64">
+        <a class="image is-64x64">
           <img :src="post.author.avatarUrl"/>
-        </figure>
+        </a>
         <p class="has-text-weight-bold is-size-5 mh2 mv1">{{ post.author.fullName }}</p>
       </div>
 
       <p class="has-text-left">{{ post.text }}</p>
 
       <div class="mv3">
-        <figure class="image center">
+        <a class="image center">
           <img v-if="post.imageUrl" :src="post.imageUrl"/>
-        </figure>
+        </a>
       </div>
 
       <div class="level is-mobile">
