@@ -1,29 +1,44 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <div id="feed" class="section">
+      <div class="container is-block-desktop" style="max-width: 600px;">
+        <Post :post="post"/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import Post from './components/Post.vue';
+import state from './random-state';
 
 @Component({
   components: {
-    HelloWorld,
+    Post,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  get post() {
+    return state.posts[0];
+  }
+}
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import "~bulma/sass/utilities/_all";
+
+
+// #app {
+//   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+//   align-content: center;
+//   text-align: center;
+//   color: #2c3e50;
+//   margin-top: 60px;
+// }
+
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
 </style>
