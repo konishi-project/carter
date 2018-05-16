@@ -12,4 +12,5 @@ export interface INote {
   time: Date;
   author: IUser;
   children: null | INote[];
+  keks: number;
 }

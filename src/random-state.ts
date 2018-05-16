@@ -42,6 +42,7 @@ export function getRandomNote(userPool: IUser[], nestingLevel = 0): INote {
     text: Faker.lorem.sentences(random(1, 10)),
     time: Faker.date.between(now, fiveDaysAgo),
     author: getRandomUser(),
+    keks: Math.random() < 0.5 ? random(1, 10) : 0,
     children:
       nestingLevel === 0
         ? null
