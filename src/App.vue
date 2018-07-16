@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Navbar/>
     <div id="feed" class="section">
       <div class="container is-block-desktop" style="max-width: 600px;">
         <Post :post="post"/>
@@ -10,11 +11,13 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Post from './components/Post.vue';
+import Post from '@/components/Post.vue';
+import Navbar from '@/components/Navbar.vue';
 import state from './random-state';
 
 @Component({
   components: {
+    Navbar,
     Post,
   },
 })
