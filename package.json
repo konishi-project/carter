@@ -30,7 +30,7 @@
     "faker": "^4.1.0",
     "lint-staged": "^6.0.0",
     "lodash": "^4.17.5",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.9.2",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "tachyons": "^4.9.1",
